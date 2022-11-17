@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PrimeNGConfig} from "primeng/api";
 import {AuthService} from "./shared/services/auth.service";
 import {FormBuilder, Validators} from "@angular/forms";
+import {UserService} from "./shared/services/user.service";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   username: string = '';
   password: string = '';
 
-  constructor(private primengConfig: PrimeNGConfig, public authService: AuthService) {
+  constructor(private primengConfig: PrimeNGConfig, public authService: AuthService, public userService: UserService) {
   }
 
   ngOnInit() {

@@ -1,5 +1,7 @@
 <div class="p-card"
-     style="max-width: 36rem; margin: auto">
+     style="max-width: 36rem; margin: auto"
+     *ngIf="this.userService.getUserAuthenticated().username === '' ; else elseBlock"
+>
   <div class="content-section implementation"
        style="margin: auto; max-width: 12rem;">
     <div class="card"
@@ -35,7 +37,7 @@
 
           <div class="field col-12 md:col-4"
                style="margin-top: 0.75rem; max-width: 6rem">
-            <p-button label="Entrar" (onClick)="authenticateUser()" routerLink="records"></p-button>
+            <p-button label="Entrar" (onClick)="authenticateUser()" [routerLink]="['/records']"></p-button>
           </div>
 
           <br>
@@ -43,3 +45,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #elseBlock>
+  <router-outlet></router-outlet>
+</ng-template>

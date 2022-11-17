@@ -1,0 +1,60 @@
+<div class="p-card"
+     style="max-width: 36rem; margin: auto">
+  <div class="content-section implementation"
+       style="margin: auto; max-width: 12rem;">
+    <div class="card"
+         style="margin-top: 2rem">
+      <div class="p-fluid grid">
+        <br>
+        <div class="field col-12 md:col-4">
+          <span>Usuario</span>
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-user"></i>
+            </span>
+            <span class="p-float-label">
+                <input type="text" id="username" pInputText [(ngModel)]="username">
+                <label for="username"></label>
+            </span>
+          </div>
+        </div>
+
+        <div class="field col-12 md:col-4"
+             style="margin-top: 0.75rem">
+          <span>Email</span>
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-envelope"></i>
+            </span>
+            <span class="p-float-label">
+                <input type="text" id="email" pInputText [(ngModel)]="email">
+                <label for="email"></label>
+            </span>
+          </div>
+        </div>
+
+
+        <div class="field col-12 md:col-4"
+             style="margin-top: 0.75rem">
+          <span>Senha</span>
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-lock"></i>
+            </span>
+            <span class="p-float-label">
+                <input type="password" id="password" pInputText [(ngModel)]="password">
+                <label for="password"></label>
+            </span>
+          </div>
+        </div>
+
+        <div class="field col-12 md:col-4"
+             style="margin-top: 0.75rem; max-width: 6rem">
+          <p-button label="Registrar" (onClick)="saveUser()"></p-button>
+        </div>
+
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,7 @@ import {UserService} from "./user.service";
 import {User} from "../model/user.interface";
 import {Router} from "@angular/router";
 
+// @ts-ignore
 @Injectable({
   providedIn: "root",
 })
@@ -20,9 +21,9 @@ export class AuthService {
       .append("username", username)
       .append("password", password)
 
-    this.httpClient.post(`http://localhost:8080/sso/signing`, httpParams, {responseType: 'text'}).subscribe((bearerToken) => {
+    this.httpClient.post(`https://jwt-auth-springboot.herokuapp.com/sso/signing`, httpParams, {responseType: 'text'}).subscribe((bearerToken) => {
       if (bearerToken !== null || '') {
-        this.httpClient.get<User>(`http://localhost:8080/sso/search/${username}`).subscribe((response) => {
+        this.httpClient.get<User>(`https://jwt-auth-springboot.herokuapp.com/sso/search/${username}`).subscribe((response) => {
           const user: User = {
             email: response.email, userEntityRoles: response.userEntityRoles[0], username: response.username
           }

@@ -1,5 +1,4 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -10,12 +9,18 @@ import {PasswordModule} from "primeng/password";
 import {FormsModule} from "@angular/forms";
 import {AutoCompleteModule} from "primeng/autocomplete";
 import {ButtonModule} from "primeng/button";
-import { UserComponent } from './user/user.component';
+import {TableModule} from 'primeng/table';
+import {ToolbarModule} from "primeng/toolbar";
+import {CommonModule} from "@angular/common";
+import {BrowserModule} from "@angular/platform-browser";
+import {UserComponent} from "./user/user.component";
+import {UserComponentForm} from "./user/user-form.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    UserComponentForm
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,9 @@ import { UserComponent } from './user/user.component';
     PasswordModule,
     FormsModule,
     AutoCompleteModule,
-    ButtonModule
+    ButtonModule,
+    TableModule,
+    ToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
